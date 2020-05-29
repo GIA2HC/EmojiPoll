@@ -87,7 +87,7 @@ function buildChart(data) {
       .text(function(d, i) {
         return emojis[i] + " " + d; 
       });
-   }, 200);
+//    }, 200);
 }
 
 // Kick things off!
