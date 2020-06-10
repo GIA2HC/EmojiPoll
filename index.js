@@ -1,9 +1,12 @@
 console.clear();
 
 // sort with _createdTime ??
-var airtable_read_endpoint = "https://api.airtable.com/v0/appnPiAF5nEI3Lu1a/all_poll_data?maxRecords=100&view=poll_data&api_key=keyU4jNgidjWREljE&sortField=_createdTime&sortDirection=desc";
 
-var airtable_write_endpoint = "https://api.airtable.com/v0/appnPiAF5nEI3Lu1a/all_poll_data?api_key=keyU4jNgidjWREljE";
+//3. Customize url with base id and api key
+//4. Customize airtable table name, view name, field name per tutorial
+var airtable_read_endpoint = "https://api.airtable.com/v0/appaKfm5WTxercrEz/all_poll_data?maxRecords=100&view=poll_data&api_key=key56IraIPcBGh3WB&sortField=_createdTime&sortDirection=desc";
+
+var airtable_write_endpoint = "https://api.airtable.com/v0/appaKfm5WTxercrEz/all_poll_data?maxRecords=100&view=poll_data&api_key=key56IraIPcBGh3WB&sortField=_createdTime&sortDirection=desc";
 
 // Write API
 var form = document.querySelector("#voting-form");
@@ -36,6 +39,7 @@ function getDataAndBuild() {
     "🍕": 0, 
     "☠️": 0
   };
+  
   emojis = ["👯", "🍑", "💥", "🍕", "☠️"];
   chartData = [0, 0, 0, 0, 0];
   
@@ -87,7 +91,7 @@ function buildChart(data) {
       .text(function(d, i) {
         return emojis[i] + " " + d; 
       });
-//    }, 200);
+   }, 200);
 }
 
 // Kick things off!
