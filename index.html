@@ -1,69 +1,81 @@
-<html>
-<form action="#0" id="voting-form" class="voting-form">
-  <h1>Which of these emojis is your favorite?</h1>
-  <div>
-    <select name="emoji_choice" id="emoji_choice">
-      <option value="👯">👯</option>
-      <option value="🍑">🍑</option>
-      <option value="💥">💥</option>
-      <option value="🍕">🍕</option>
-      <option value="☠️">☠️</option>
-    </select>
-  </div>
-  <div>
-    <input type="submit" value="Vote">
-  </div>
-</form>
+<html lang="en">
+  <head>
+    <!-- 5. Make sure html can read emoji -->
+    <meta charset="UTF-8">
+    <style>
+      body {
+      font-family: Sans-Serif;
+      margin: 0;
+    }
+    h1, h2 {
+      font-size: 20px;
+    }
 
-<div class="chart">
-  <h2>The last 100 votes</h2>
-</div>
+    .voting-form {
+      background: #eee;
+      padding: 20px;
+      margin: 0 0 20px 0;
+    }
+    select {
+      width: 200px;
+      text-align: center;
+    }
 
-<style>
+    .chart {
+      padding: 20px;
+    }
+    .chart div {
+      font-size: 20px;
+      text-align: right;
+      padding: 5px;
+      margin: 0 0 3px 0;
+      color: white;
+    }
+    .chart div:nth-of-type(1) {
+      background-color: #FDBE1A;
+    }
+    .chart div:nth-of-type(2) {
+      background-color: #F2B6A0;
+    }
+    .chart div:nth-of-type(3) {
+      background-color: #FFD85A;
+    }
+    .chart div:nth-of-type(4) {
+      background-color: #830C07;
+    }
+    .chart div:nth-of-type(5) {
+      background-color: #999999;
+    }
+    </style>
+    <!-- 0. Add put style inside of head, later we'll use a .css file -->
 
-body {
-  font-family: Sans-Serif;
-  margin: 0;
-}
-h1, h2 {
-  font-size: 20px;
-}
-
-.voting-form {
-  background: #eee;
-  padding: 20px;
-  margin: 0 0 20px 0;
-}
-select {
-  width: 200px;
-  text-align: center;
-}
-
-.chart {
-  padding: 20px;
-}
-.chart div {
-  font-size: 20px;
-  text-align: right;
-  padding: 5px;
-  margin: 0 0 3px 0;
-  color: white;
-}
-.chart div:nth-of-type(1) {
-  background-color: #FDBE1A;
-}
-.chart div:nth-of-type(2) {
-  background-color: #F2B6A0;
-}
-.chart div:nth-of-type(3) {
-  background-color: #FFD85A;
-}
-.chart div:nth-of-type(4) {
-  background-color: #830C07;
-}
-.chart div:nth-of-type(5) {
-  background-color: #999999;
-}
-</style>
+    <!-- 2. Add external javascript resources from the tutorial-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.11.0/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js"></script>
+  </head>
+  <body>
+    <form action="#0" id="voting-form" class="voting-form">
+      <h1>Which of these emojis is your favorite?</h1>
+      <div>
+        <select name="emoji_choice" id="emoji_choice">
+          <option value="👯">👯</option>
+          <option value="🍑">🍑</option>
+          <option value="💥">💥</option>
+          <option value="🍕">🍕</option>
+          <option value="☠️">☠️</option>
+        </select>
+      </div>
+      <div>
+        <input type="submit" value="Vote">
+      </div>
+    </form>
+  
+    <div class="chart">
+      <h2>The last 100 votes</h2>
+    </div>
+  </body>
+  <!-- 1. Add script below body -->
+  <script src="./index.js"></script>
 
 </html>
